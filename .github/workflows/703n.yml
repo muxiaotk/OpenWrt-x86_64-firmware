@@ -63,7 +63,9 @@ jobs:
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
     - name: add 703n-dts
       run: |
-        cd openwrt
+        cd openwrt/target
+        ls
+        cd linux/ath79
         ls
     - name: Load custom feeds
       run: |
