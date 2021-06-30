@@ -62,6 +62,7 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
     - name: add 703n-dts
+      run: |
         cd target/linux/ath79/image
         cat >> generic-tp-link.mk <<EOF
           define Device/tplink_tl-wr703n
