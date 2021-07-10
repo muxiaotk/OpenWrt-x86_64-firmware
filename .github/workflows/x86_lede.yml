@@ -70,7 +70,13 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
-
+        
+    - name: add theme
+      run: |
+        git clone https://github.com/kenzok8/openwrt-packages.git
+        mv openwrt-packages/luci-theme-atmaterial openwrt/package/lean
+        mv openwrt-packages/luci-theme-edge openwrt/package/lean
+        
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
